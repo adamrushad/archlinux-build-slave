@@ -2,7 +2,7 @@ FROM adamrushad/archlinux-jnlp-slave:latest
 MAINTAINER AdamRushad <2429990+adamrushad@users.noreply.github.com>
 
 #Install
-RUN pacman -Syu --noconfirm && pacman -S base-devel git --noconfirm && pacman -Scc --noconfirm
+RUN pacman -Syu --noconfirm && pacman -S base-devel git --noconfirm && pacman -Scc --noconfirm && touch /agent.log && chown nobody:nobody agent.log
 
 USER nobody:nobody
 
