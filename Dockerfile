@@ -2,7 +2,7 @@ FROM adamrushad/archlinux-jnlp-slave:latest
 MAINTAINER AdamRushad <2429990+adamrushad@users.noreply.github.com>
 
 #Install
-RUN pacman -Syu --noconfirm && pacman -S base-devel --noconfirm && pacman -Scc --noconfirm
+RUN pacman -Syu --noconfirm && pacman -S base-devel git --noconfirm && pacman -Scc --noconfirm
 
 ARG BUILD_DATE
 ARG VCS_REF
