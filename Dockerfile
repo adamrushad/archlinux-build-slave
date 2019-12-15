@@ -1,10 +1,17 @@
 FROM adamrushad/archlinux-jnlp-slave:latest
 MAINTAINER AdamRushad <2429990+adamrushad@users.noreply.github.com>
 
-#Install
-RUN pacman -Syu --noconfirm && pacman -S base-devel git --noconfirm && pacman -Scc --noconfirm && touch /agent.log && chown nobody:nobody agent.log
+ARG user=jenkins
+ARG group=jenkins
+ARG uid=975
+ARG gid=975
 
-USER nobody:nobody
+#Install
+RUN groupadd -g ${gid} ${group} && useradd -c "Jenkins user" -d /home/${user} -u ${uid} -g ${gid} -m ${user}
+RUN touch /agent.log && chown ${user}:${group} /agent.log
+RUN pacman -Syu --noconfirm && pacman -S base-devel git --noconfirm && pacman -Scc --noconfirm 
+
+USER ${user}:${group}
 
 COPY jenkins.sudoers /etc/sudoers.d/jenkins
 
