@@ -4,6 +4,8 @@ MAINTAINER AdamRushad <2429990+adamrushad@users.noreply.github.com>
 #Install
 RUN pacman -Syu --noconfirm && pacman -S base-devel git --noconfirm && pacman -Scc --noconfirm
 
+USER nobody:nogroup
+
 ARG BUILD_DATE
 ARG VCS_REF
 ARG VERSION
