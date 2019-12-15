@@ -6,6 +6,8 @@ RUN pacman -Syu --noconfirm && pacman -S base-devel git --noconfirm && pacman -S
 
 USER nobody:nobody
 
+COPY jenkins.sudoers /etc/sudoers.d/jenkins
+
 ARG BUILD_DATE
 ARG VCS_REF
 ARG VERSION
