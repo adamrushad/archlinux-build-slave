@@ -8,7 +8,7 @@ ARG gid=975
 
 #Install
 RUN groupadd -g ${gid} ${group} && useradd -c "Jenkins user" -d /home/${user} -u ${uid} -g ${gid} -m ${user}
-RUN touch /agent.log && chown ${user}:${group} /agent.log
+RUN touch /agent.log && chown ${user}:${group} /agent.log && chown -R ${user}:${group} /workspace
 RUN pacman -Syu --noconfirm && pacman -S base-devel git --noconfirm && pacman -Scc --noconfirm 
 
 USER ${user}:${group}
