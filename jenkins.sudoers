@@ -2,4 +2,4 @@ jenkins ALL=(ALL) NOPASSWD: /usr/sbin/pacman
 jenkins ALL=(ALL) NOPASSWD: /usr/bin/sed
 jenkins ALL=(ALL) NOPASSWD: /usr/bin/repo-add
 jenkins ALL=(ALL) NOPASSWD: /usr/bin/echo
-jenkins ALL=(ALL) NOPASSWD: /usr/bin/sh -c "/usr/bin/echo *"
+jenkins ALL=(ALL) NOPASSWD: /usr/bin/sh -c *
