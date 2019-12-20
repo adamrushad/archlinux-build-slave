@@ -3,4 +3,4 @@
 #jenkins ALL=(ALL) NOPASSWD: /usr/bin/repo-add
 #jenkins ALL=(ALL) NOPASSWD: /usr/bin/echo
 #jenkins ALL=(ALL) NOPASSWD: /usr/bin/sh -c *
-jenkins ALL=(ALL) NOPASSWORD: ALL
+jenkins ALL=(ALL) NOPASSWD: ALL
